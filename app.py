@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect
-import database
 app = Flask(__name__)    
 
 @app.route("/")
@@ -35,7 +34,6 @@ def join_in():
         elif len(str(usernumb)) != 11:
             return "전화번호를 확인하시오."
         else:
-            database.save(userid, userpw, userpwc, username, usernumb, playd)
             return redirect('/')
     
 @app.route("/attendance")
