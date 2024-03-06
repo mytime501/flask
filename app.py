@@ -4,16 +4,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template("hello.html")
+    return render_template("./hello.html")
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("./login.html")
 
 @app.route("/join", methods=['GET', 'POST'])
 def join_in():
     if request.method == 'GET':
-        return render_template("join.html")
+        return render_template("./join.html")
     else:
         userid = request.form.get("userid")
         userpw = request.form.get("userpw")
@@ -40,7 +40,7 @@ def join_in():
     
 @app.route("/attendance")
 def attendance():
-    return render_template("attendance.html")
+    return render_template("./attendance.html")
 
  
 if __name__ == "__main__":
