@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from pymongo import MongoClient
 import datetime
 app = Flask(__name__)
-
+app.secret_key="My_Key"
 
 client = MongoClient(
             host="mongodb://svc.sel5.cloudtype.app",
@@ -28,8 +28,10 @@ def login():
         userpwnow = request.form.get("userpwnow")
         result = db.whostudy.find_one({'userid':useridnow, 'userpw':userpwnow})
         if result != None:
+            flash("{}님 로그인 되었습니다.".format(useridnow))
             return redirect("attendance")
         else:
+            flash("ID와 PW를 확인하세요.")
             return render_template("login.html")
         
 @app.route("/join", methods=['GET', 'POST'])
@@ -51,12 +53,16 @@ def join_in():
         
         reid = db.whostudy.find_one({'userid': userid})
         if reid != None:
+            flash("중복된 ID입니다.")
             return render_template("join.html")
         elif len(str(userid)) != 9:
+            flash("학번을 확인하세요.")
             return render_template("join.html")
         elif userpw != userpwc:
+            flash("비밀번호가 다릅니다.")
             return render_template("join.html")
         elif len(str(usernumb)) != 11:
+            flash("전화번호를 확인하세요.")
             return render_template("join.html")
         else:
             db.whostudy.insert_one({'userid': userid, 'userpw': userpw, 'username': username, 'usernumb': usernumb, 'playd': playd})
@@ -78,6 +84,7 @@ def attendance():
             nowtime = now.strftime("%Y{} %m{} %d{} %H{} %M{} %S{}")
             nowtime = nowtime.format('년','월','일','시','분','초')
             db.whostudycheck.insert_one({'userid': "test", 'nowtime': nowtime})
+            flash("출석되었습니다.")
             return redirect('/')
         else:
             return render_template("attendance.html")
