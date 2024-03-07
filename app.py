@@ -52,7 +52,7 @@ def join_in():
         reid = db.whostudy.find_one({'userid': userid})
         if reid != None:
             return render_template("join.html")
-        elif len(str(userid)) != 7:
+        elif len(str(userid)) != 9:
             return render_template("join.html")
         elif userpw != userpwc:
             return render_template("join.html")
