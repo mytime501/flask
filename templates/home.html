@@ -11,12 +11,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
+            body {
+                background: #EDEBEB;
+            }
+
             .attend1{
                 /* 로그인 후 메인 */
 
                 position: relative;
                 width: 360px;
                 height: 640px;
+                border-radius: 20px;
 
                 background: #FFFFFF;
             }
@@ -131,16 +136,18 @@
                 }
             }
         </style>
-        <title>메인</title>
+        <title>홈</title>
     </head>
-    <body class="attend1">
-        <form method="post">
-            <div class="who1"></div>
-            <div class="who2"></div>
-            <div class="who3"></div>
-            <div class="who4">WHO</div>
-            
-            <a href="/attendance" class="attend2">미라클 모닝</a>
-        </form>
+    <body>
+        <div class="attend1">
+            <form method="post">
+                <div class="who1"></div>
+                <div class="who2"></div>
+                <div class="who3"></div>
+                <div class="who4">WHO</div>
+                
+                <a href="/attendance" class="attend2">미라클 모닝</a>
+            </form>
+        </div>
     </body>
 </html>
