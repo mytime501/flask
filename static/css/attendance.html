@@ -1,23 +1,4 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-            window.onload=function(){
-                target=document.getElementById('file'); // file 아이디 선언
-                target.addEventListener('change',function(){ // change 함수
-                    
-                    if(target.value.length){ // 파일 첨부인 상태일경우 파일명 출력
-                        $('#originName').html(target.files[0].name);
-                    }else{ //버튼 클릭후 취소(파일 첨부 없을 경우)할때 파일명값 안보이게
-                        $('#originName').html("");
-                    }
-                    
-                });
-            }
 
-        </script>
-        <style type="text/css">
             body {
                 background: #EDEBEB;
             }
@@ -200,22 +181,3 @@
                     top: 80px;
                 }
             }
-        </style>
-        <title>출석</title>
-    </head>
-    <body>
-        <div class="attend1">
-            <form action="/attendance" method="post" enctype="multipart/form-data">
-                <div class="attend2">WHO 미라클 모닝</div>
-                <div class="secucode">{{value}}</div>
-                <div class="secu1">인증키</div>
-                <input class="secu2" required name="security_code" placeholder="위의 인증번호를 입력하세요.">
-                
-                <input type="file" id="file" required name="image" accept="image/*" style="display:none">
-                <label for="file" class="photo">사진첨부</label>
-
-                <button type="submit" class="attend3">출석</button>
-            </form>
-        </div>
-    </body>
-</html>
