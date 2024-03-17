@@ -1,0 +1,170 @@
+body {
+    background: #EDEBEB;
+}
+
+.login1{
+    position: relative;
+    width: 360px;
+    height: 640px;
+    border-radius: 20px;
+
+    background: #FFFFFF;
+}
+
+.login2{
+    /* 로그인 */
+
+    position: absolute;
+    width: 90px;
+    height: 36px;
+    left: 20px;
+    top: 56px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+    /* or 36px */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+    mix-blend-mode: normal;
+}
+
+.grade1{
+    /* 학번 */
+
+    position: absolute;
+    width: 40px;
+    height: 24px;
+    left: 20px;
+    top: 107px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+}
+
+.grade2{
+    /* Rectangle 1 */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: 20px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border: 1px solid #AEAEAE;
+    border-radius: 5px;
+}
+
+.pw1{
+    /* 비밀번호 */
+
+    position: absolute;
+    width: 90px;
+    height: 24px;
+    left: 20px;
+    top: 201px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.pw2{
+    /* Rectangle 1 */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: 20px;
+    top: 230px;
+
+    background: #FFFFFF;
+    border: 1px solid #AEAEAE;
+    border-radius: 5px;
+}
+
+.pw3{
+    /* Rectangle 1 */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    left: 350px;
+    top: 230px;
+
+    background: #FFFFFF;
+    border: 1px solid #AEAEAE;
+    border-radius: 5px;
+}
+
+.check{
+    /* 로그인 */
+
+    position: absolute;
+    width: 250px;
+    height: 53.41px;
+    left: 54px;
+    top: 333px;
+    border-radius: 5px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content : center;
+
+    color: #FFFFFF;
+    background: #9c9b9b;
+
+    border: none;
+}
+
+@media (min-width: 1200px) {
+    .login1{
+        /* Android Small - 1 */
+        left: 40%;
+        top: 15%;
+    }
+
+}
+
+@media (max-width: 767px){
+    .login1{
+        /* Android Small - 1 */
+        left: 20px;
+        top: 80px;
+    }
+}
