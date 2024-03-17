@@ -1,0 +1,344 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                background: #EDEBEB;
+            }
+
+            .join1{
+                /* 회원가입 */
+
+                position: relative;
+                width: 360px;
+                height: 720px;
+                border-radius: 20px;
+
+                background: #FFFFFF;
+            }
+            
+            .join2{
+                /* 회원가입 */
+
+                position: absolute;
+                width: 150px;
+                height: 36px;
+                left: 20px;
+                top: 56px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 130%;
+                /* or 36px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+
+                mix-blend-mode: normal;
+            }
+ 
+            .userid1{
+                /* 학번* */
+
+                position: absolute;
+                width: 40px;
+                height: 30px;
+                left: 20px;
+                top: 107px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            
+            .userid2{
+
+                /* Rectangle 1 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 320px;
+                height: 50px;
+                left: 20px;
+                top: 136px;
+
+                background: #FFFFFF;
+                border: 1px solid #AEAEAE;
+                border-radius: 5px;
+            }
+
+            .userpw1{
+                /* 비밀번호* */
+
+                position: absolute;
+                width: 80px;
+                height: 30px;
+                left: 20px;
+                top: 201px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            
+            .userpw2{
+                /* Rectangle 1 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 320px;
+                height: 50px;
+                left: 20px;
+                top: 230px;
+
+                background: #FFFFFF;
+                border: 1px solid #AEAEAE;
+                border-radius: 5px;
+            }
+
+            .userpwc1{
+                /* 비밀번호 확인* */
+
+                position: absolute;
+                width: 110px;
+                height: 30px;
+                left: 20px;
+                top: 295px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            
+            .userpwc2{
+                /* Rectangle 1 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 320px;
+                height: 50px;
+                left: 20px;
+                top: 330px;
+
+                background: #FFFFFF;
+                border: 1px solid #AEAEAE;
+                border-radius: 5px;
+            }
+            
+            .username1{
+                /* 이름* */
+
+                position: absolute;
+                width: 40px;
+                height: 30px;
+                left: 20px;
+                top: 389px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            
+            .username2{
+                /* Rectangle 1 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 320px;
+                height: 50px;
+                left: 20px;
+                top: 418px;
+
+                background: #FFFFFF;
+                border: 1px solid #AEAEAE;
+                border-radius: 5px;
+            }
+            
+            .usernumb1{
+                /* 전화번호* */
+
+                position: absolute;
+                width: 80px;
+                height: 30px;
+                left: 19px;
+                top: 483px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            
+            .usernumb2{
+                /* Rectangle 1 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 320px;
+                height: 50px;
+                left: 19px;
+                top: 512px;
+
+                background: #FFFFFF;
+                border: 1px solid #AEAEAE;
+                border-radius: 5px;
+            }
+
+            .play1{
+                /* Rectangle 2 */
+
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 20px;
+                height: 18px;
+                left: 20px;
+                top: 585px;
+
+                background: #FFFFFF;
+                opacity: 0.5;
+                border: 1px solid #AEAEAE;
+                border-radius: 2px;
+            }
+            
+            .play2{
+                /* 이용약관 필수 동의 자세히 보기* */
+
+                position: absolute;
+                height: 21px;
+                left: 52px;
+                top: 583px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                /* or 30px */
+
+                color: #000000;
+            }
+            
+            .end{
+                /* 완료 */
+
+                position: absolute;
+                width: 250px;
+                height: 53.41px;
+                left: 54px;
+                bottom: 20px;
+                border-radius: 5px;
+
+                font-family: 'Noto Sans KR';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 150%;
+                /* identical to box height, or 30px */
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content : center;
+
+                color: #FFFFFF;
+                background: #9c9b9b;
+
+                border: none;
+            }
+
+            @media (min-width: 1200px) {
+                .join1{
+                    /* Android Small - 1 */
+                    left: 40%;
+                    top: 10%; 
+                }
+
+            }
+
+            @media (max-width: 767px){
+                .join1{
+                    /* Android Small - 1 */
+                    left: 20px;
+                }
+            }
+        </style>
+        <title>회원가입</title>
+    </head>
+    <body>
+        <div class="join1">
+            <form method = "POST">
+                <div class="join2">회원가입</div>
+                <div>
+                    <div class="userid1">학번*</div>
+                    <input class="userid2" placeholder="학번을 입력하세요" required name = "userid">
+                </div>
+                <div>
+                    <div class="userpw1">비밀번호*</div><br>
+                    <input type="password" class="userpw2" placeholder="비밀번호를 입력하세요" required name = "userpw">
+                </div>
+                <div>
+                    <div class="userpwc1">비밀번호 확인*</div><br>
+                    <input type="password" class="userpwc2" placeholder="비밀번호를 입력하세요" required name = "userpwc">
+                </div>
+                <div>
+                    <div class="username1">이름*</div><br>
+                    <input class="username2" placeholder="이름을 입력하세요" required name = "username">
+                </div>
+                <div>
+                    <div class="usernumb1">전화번호*</div><br>
+                    <input class="usernumb2" placeholder="전화번호를 -없이 입력하세요" required name = "usernumb">
+                </div>
+                <div>
+                    <input class="play1" type = "checkbox" name = "play" required value = "play">
+                    <div class="play2">동아리 내 개인정보 수집 및 활용 동의</div>
+                </div>
+                <div>
+                    <button type="submit" class="end">등록</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
