@@ -93,6 +93,9 @@ def join_in():
         elif len(str(userid)) != 9:
             flash("학번을 확인하세요.")
             return render_template("join.html")
+        elif len(str(userpw)) < 6:
+            flash("비밀번호 조건을 확인하세요.")
+            return render_template("join.html")
         elif userpw != userpwc:
             flash("비밀번호가 다릅니다.")
             return render_template("join.html")
@@ -138,16 +141,20 @@ def attendance():
                 img = request.files['image']
 
                 todayattend = db.fs.files.find_one({"filename": payload['id'], "uploadDatenow": nowday})
-
-                if todayattend == None:
-                    fs = gridfs.GridFS(db)
-                    fs.put(img, filename = user_info['userid'], uploadDatenow = nowday)
-                    db.whostudycheck.insert_one({'userid': user_info['userid'], 'username': user_info['username'], 'nowtime': nowtime})
-                    flash("출석되었습니다.")
-                    return redirect('/home')
+                if img != None:
+                    if todayattend == None:
+                        fs = gridfs.GridFS(db)
+                        fs.put(img, filename = user_info['userid'], uploadDatenow = nowday)
+                        db.whostudycheck.insert_one({'userid': user_info['userid'], 'username': user_info['username'], 'nowtime': nowtime})
+                        flash("출석되었습니다.")
+                        return redirect('/home')
+                    else:
+                        flash("이미 출석되었습니다.")
+                        return redirect('/home')
                 else:
-                    flash("이미 출석되었습니다.")
-                    return redirect('/home')
+                    flash("이미지 첨부가 필요합니다.")
+                    return render_template("attendance.html", value = securitycode)
+
             else:
                 flash("인증키가 틀렸습니다.")
                 return render_template("attendance.html", value = securitycode)
