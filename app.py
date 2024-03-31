@@ -6,6 +6,7 @@ import jwt
 import hashlib
 import string
 import random
+import math
 
 app = Flask(__name__)
 app.secret_key="My_Key"
@@ -137,24 +138,15 @@ def attendance():
                 nowtime = nowtime.format('년','월','일','시','분','초')
                 nowday = now.strftime("%Y{} %m{} %d{}")
                 nowday = nowday.format('년','월','일')
-                
-                img = request.files['image']
-
-                todayattend = db.fs.files.find_one({"filename": payload['id'], "uploadDatenow": nowday})
-                if img != None:
-                    if todayattend == None:
-                        fs = gridfs.GridFS(db)
-                        fs.put(img, filename = user_info['userid'], uploadDatenow = nowday)
+                todayattend = db.whoday.find_one({"filename": payload['id'], "uploadDatenow": nowday})
+                if todayattend == None:
+                        db.whoday.insert_one({"filename": payload['id'], "uploadDatenow": nowday})
                         db.whostudycheck.insert_one({'userid': user_info['userid'], 'username': user_info['username'], 'nowtime': nowtime})
                         flash("출석되었습니다.")
                         return redirect('/home')
-                    else:
-                        flash("이미 출석되었습니다.")
-                        return redirect('/home')
                 else:
-                    flash("이미지 첨부가 필요합니다.")
-                    return render_template("attendance.html", value = securitycode)
-
+                    flash("이미 출석되었습니다.")
+                    return redirect('/home')
             else:
                 flash("인증키가 틀렸습니다.")
                 return render_template("attendance.html", value = securitycode)
@@ -164,7 +156,6 @@ def attendance():
     except jwt.exceptions.DecodeError:
         flash("로그인 정보가 존재하지 않습니다.")
         return redirect("/login")
-
 if __name__ == "__main__":
     app.run('0.0.0.0',port=5000,debug=True)
     
